@@ -1,0 +1,16 @@
+[package]
+name = "nanobug-maven-native"
+version = "0.1.18"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+
+[dependencies]
+serde_json = "1.0"
+
+# This controlled native entry is separate from the independent WASM guest workspace.
+[workspace]
+
+[target.'cfg(windows)'.dependencies]
+# The owned native session sets its console encoding before the JVM initializes standard streams.
+windows-sys = { version = "=0.61.2", features = ["Win32_System_Console"] }

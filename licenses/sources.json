@@ -1,0 +1,9 @@
+{
+  "maven": {
+    "version":"3.10.0",
+    "url":"https://dlcdn.apache.org/maven/maven-3/3.10.0/binaries/apache-maven-3.10.0-bin.zip",
+    "sha256":"1f6d9909266510f039f59aa0e13dcd2c66da85f043e56276e41f2918f8bddaff",
+    "sha512":"22d31676d5b92ed53308c19ecded3245d0efd0cddfec51ec7bab62f4f13ad70ddddceff8e62940e0e8e2421f3cde8106737f4becec0aa034ffeff2a754e88337",
+    "license":"Apache-2.0; distribution LICENSE and NOTICE remain in the original ZIP."
+  }
+}

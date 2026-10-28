@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "manifest": "manifest.json",
+  "output": "dist",
+  "wasm": {"manifest": "Cargo.toml"},
+  "native": [{
+    "program":"tar","args":["-xf","{project}\\vendor\\maven.zip","-C","{build}"],
+    "platform":"windows-x86_64","optional_platform":true
+  },{
+    "program":"javac",
+    "args":["--release","8","-Xlint:-options","-cp","{build}\\apache-maven-3.10.0\\lib\\*;{build}\\apache-maven-3.10.0\\boot\\*","-d","{build}\\classes","{project}\\native\\java\\org\\nanobug\\maven\\Bridge.java","{project}\\native\\java\\org\\nanobug\\maven\\Bootstrap.java","{project}\\native\\java\\org\\nanobug\\maven\\ImportMojo.java","{project}\\native\\java\\org\\nanobug\\maven\\Json.java"],
+    "platform":"windows-x86_64","optional_platform":true
+  },{
+    "program":"jar","args":["--create","--date=2026-10-23T00:00:00Z","--file","{build}\\maven-bridge.jar","-C","{build}\\classes",".","-C","{project}\\native\\resources","."],
+    "platform":"windows-x86_64","optional_platform":true
+  },{
+    "program":"cargo",
+    "args":["build","--manifest-path","{project}\\native\\Cargo.toml","--release","--target-dir","{build}\\native"],
+    "platform":"windows-x86_64","optional_platform":true
+  }],
+  "assets": [
+    {"source":"{build}/maven-bridge.jar","destination":"native/maven-bridge.jar","platform":"windows-x86_64"},
+    {"source":"native/java","destination":"sources/native-java"},
+    {"source":"native/resources","destination":"sources/native-resources"},
+    {"source":"LICENSE","destination":"LICENSE"},
+    {"source":"{build}/native/release/nanobug-maven-native.exe","destination":"native/maven-native.exe","platform":"windows-x86_64"},
+    {"source":"plugin.toml","destination":"plugin.toml"},
+    {"source":"vendor/maven.zip","destination":"vendor/maven.zip"},
+    {"source":"README.md","destination":"README.md"},
+    {"source":"README.zh-CN.md","destination":"README.zh-CN.md"},
+    {"source":"licenses","destination":"licenses"}
+  ]
+}

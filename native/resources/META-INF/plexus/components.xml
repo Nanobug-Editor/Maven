@@ -1,0 +1,4 @@
+<component-set><components><component>
+ <role>org.apache.maven.AbstractMavenLifecycleParticipant</role><role-hint>nanobug-model-bootstrap</role-hint>
+ <implementation>org.nanobug.maven.Bootstrap</implementation>
+</component></components></component-set>

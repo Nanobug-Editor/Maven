@@ -1,0 +1,14 @@
+<plugin>
+ <name>Nanobug project model</name><description>Read Maven's effective reactor through an owned goal</description>
+ <groupId>org.nanobug.plugins</groupId><artifactId>maven-model</artifactId><version>0.1.18</version>
+ <goalPrefix>nanobug-model</goalPrefix><isolatedRealm>false</isolatedRealm><inheritedByDefault>false</inheritedByDefault>
+ <mojos><mojo><goal>import</goal><description>Export effective project models without building</description>
+ <requiresProject>true</requiresProject><aggregator>true</aggregator>
+ <implementation>org.nanobug.maven.ImportMojo</implementation><language>java</language>
+ <instantiationStrategy>per-lookup</instantiationStrategy><executionStrategy>once-per-session</executionStrategy>
+ <threadSafe>false</threadSafe>
+ <parameters><parameter><name>session</name><type>org.apache.maven.execution.MavenSession</type><required>true</required><editable>false</editable></parameter></parameters>
+ <configuration><session implementation="org.apache.maven.execution.MavenSession">${session}</session></configuration>
+ <requirements><requirement><role>org.apache.maven.project.ProjectDependenciesResolver</role><field-name>resolver</field-name></requirement></requirements>
+ </mojo></mojos><dependencies/>
+</plugin>

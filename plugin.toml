@@ -1,0 +1,6 @@
+# Build-tool contributions are independent from language recognition and highlighting.
+[plugin]
+id = "maven"
+name = "Maven"
+version = "0.1.18"
+host_version = ">=0.1.0"
