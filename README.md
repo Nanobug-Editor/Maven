@@ -1,5 +1,7 @@
 # Maven for Nanobug
 
+Version **0.1.19** targets the Nanobug internal-test build of 2026-11-02 through the public host SDK. Installation IDs and permissions are preserved. Windows native helpers included in this package use a statically linked runtime.
+
 [简体中文](README.zh-CN.md)
 
 Independent Maven project import and build integration for Nanobug. Gradle, Lombok and JUnit remain

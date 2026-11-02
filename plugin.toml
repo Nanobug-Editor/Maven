@@ -2,5 +2,5 @@
 [plugin]
 id = "maven"
 name = "Maven"
-version = "0.1.18"
+version = "0.1.19"
 host_version = ">=0.1.0"

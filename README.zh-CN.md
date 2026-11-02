@@ -1,5 +1,7 @@
 # Maven for Nanobug
 
+版本 **0.1.19** 面向 2026-11-02 的 Nanobug 内部测试版，使用公开宿主 SDK 构建。保留安装 ID 和权限；包内附带的 Windows 原生辅助程序使用静态运行库。
+
 [English](README.md)
 
 独立的 Maven 工程导入与构建插件。Gradle、Lombok、JUnit 保持为其他独立插件。
